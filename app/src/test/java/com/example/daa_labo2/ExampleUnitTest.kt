@@ -1,4 +1,4 @@
-package com.example.daa_lab02
+package com.example.daa_labo2
 
 import org.junit.Test
 

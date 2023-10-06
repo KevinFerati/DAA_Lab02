@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "DAA_Lab02"
+rootProject.name = "DAA_Labo2"
 include(":app")
  

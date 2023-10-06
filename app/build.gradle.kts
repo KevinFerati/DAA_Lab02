@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.daa_lab02"
+    namespace = "com.example.daa_labo2"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.daa_lab02"
-        minSdk = 28
+        applicationId = "com.example.daa_labo2"
+        minSdk = 24
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
