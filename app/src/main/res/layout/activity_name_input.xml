@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".NameInputActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,19 +15,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <EditText
+            android:id="@+id/name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/my_textview"
-            android:text="@string/my_textview"/>
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Editer" />
+            android:text="Sauver" />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

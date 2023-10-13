@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DAA_Labo2</string>
+    <string name="my_textview">Bienvenue, veuillez entrer votre nom</string>
 </resources>
