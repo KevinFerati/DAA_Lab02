@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
-open class LoggedActivity : AppCompatActivity() {
+abstract class LoggedActivity : AppCompatActivity() {
 
     private fun log(event: String) {
         Log.d("Activity change", "$localClassName : on$event fired")
