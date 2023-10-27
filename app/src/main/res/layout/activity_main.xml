@@ -21,10 +21,13 @@
             android:text="@string/my_textview"/>
 
         <Button
+            style="@style/Widget.MaterialComponents.Button"
+            app:icon="@drawable/pencil"
+            app:iconGravity="start"
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Editer" />
+            android:text="@string/edit" />
 
     </LinearLayout>
 
