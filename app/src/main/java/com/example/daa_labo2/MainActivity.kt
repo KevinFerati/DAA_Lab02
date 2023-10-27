@@ -13,7 +13,12 @@ class MainActivity : LoggedActivity() {
     private lateinit var nameText: TextView;
 
     private val nameContract = registerForActivityResult(PickNameContract()) {
-        nameText.text = it ?: "<pas de nom>"
+        nameText.text = "Bonjour, veuillez entrer votre nom"
+
+        if (it != null) {
+            if(!it.isBlank())
+                nameText.text = ("Bonjour, ${it.replaceFirstChar { it.uppercase() }} !")
+        }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
