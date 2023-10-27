@@ -10,16 +10,27 @@ La première activité est redémarrée.
 
 ### Diagrammes d'état
 #### L’utilisateur ouvre l’application, clique sur le bouton éditer, renseigne son prénom et sauve. 
-#### MainActivity
+##### _MainActivity_
 ```mermaid
   graph LR
     A((Initial)) -- Utilisateur lance l'appli --> B[onCreate]
     B --> C[onStart]
     C --> D[onResume]
-    D --> E((Clique sur editer))
-    E --> F[onPause]
+    D -- Utilisateur clique sur Editer --> F[onPause]
     F --> G{Autre activité}
-    G --> H((Utilisateur revient \nen arrière))
-    H --> I[onRestart]
+    G -- Utilisateur revient \nen arrière --> I[onRestart]
     I --> C
+```
+
+##### _NameInputActivity_
+```mermaid
+  graph LR
+    A((Initial)) -- Utilisateur lance l'appli --> B[onCreate]
+    B --> C[onStart]
+    C --> D[onResume]
+    D -- Saisit son nom \net valide --> F[onPause]
+    F --> G[onStop]
+    G --> H[onDetroy]
+    H --> I{Redirection vers\nl'activité principale}
+    
 ```
