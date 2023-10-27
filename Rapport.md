@@ -66,3 +66,20 @@ mode paysage, renseigne son prénom et sauve.
     M --> N{Redirection vers\nl'activité principale}
     
 ```
+
+## Que faut-il mettre en place pour que vos Activités supportent la rotation de l’écran ? Est-ce nécessaire de le réaliser pour les deux Activités, quelle est la différence ? 
+
+Lorsque nous basculons l'écran, l'activité va se stopper et se détruire:  
+```onPause() - onStop() - onDestroy()```
+
+Puis va se recréer:  
+```onCreate() - onStart() - onResume()```
+
+Si rien n'est fait dans la MainActivity, nous perdons alors le nom de l'utilisateur (s'il a été entré au préalable).  
+Bien que la même chose ce produit dans notre NameInputActivity, notre texte est gardé si nous l'avons introduit.
+Cela est dû à notre modèle de vue qui conserve automatiquement son état et que les données saisies par l'utilisateur 
+dans les champs de saisie sont préservées.  
+  
+Pour éviter ce comportement indésirable dans le MainActivity, nous pourrions utiliser un "ViewModel" qui nous 
+permettrait de garder l'état du texte entré préalablement par l'utilisateur. Ainsi, lorsque nous changeront de vue 
+le texte restera à l'écran malgré le nouvelle création de l'état.
