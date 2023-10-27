@@ -9,20 +9,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/viewSpacing"
+        android:layout_marginEnd="@dimen/viewSpacing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/my_textview"
+            android:layout_weight="1"
             android:text="@string/my_textview"/>
 
         <Button
             style="@style/Widget.MaterialComponents.Button"
             app:icon="@drawable/pencil"
+            android:layout_weight="0"
             app:iconGravity="start"
             android:id="@+id/button"
             android:layout_width="wrap_content"

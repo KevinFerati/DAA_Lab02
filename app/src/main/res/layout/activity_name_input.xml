@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".NameInputActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/viewSpacing"
+        android:layout_marginEnd="@dimen/viewSpacing"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,16 +18,19 @@
 
         <EditText
             android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/viewSpacing"
+            android:layout_height="wrap_content" android:layout_width="wrap_content"/>
 
         <Button
             style="@style/Widget.MaterialComponents.Button"
+            android:layout_weight="0"
             app:icon="@drawable/check"
             app:iconGravity="start"
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/viewSpacing"
             android:text="@string/save" />
 
     </LinearLayout>
