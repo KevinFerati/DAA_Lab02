@@ -34,3 +34,35 @@ La première activité est redémarrée.
     H --> I{Redirection vers\nl'activité principale}
     
 ```
+#### L’utilisateur ouvre l’application en mode portrait, clique sur le bouton éditer, bascule en
+mode paysage, renseigne son prénom et sauve. 
+##### _MainActivity_
+```mermaid
+  graph LR
+    A((Initial)) -- Utilisateur lance l'appli en paysage --> B[onCreate]
+    B --> C[onStart]
+    C --> D[onResume]
+    D -- Utilisateur clique sur Editer --> F[onPause]
+    F --> G{Autre activité}
+    G -- Utilisateur revient \nen arrière après \navoir changé l'orientation  --> I[onDestroy]
+    I --> B
+```
+
+##### _NameInputActivity_
+```mermaid
+  graph LR
+    A((Initial)) -- Utilisateur lance l'appli --> B[onCreate]
+    B --> C[onStart]
+    C --> D[onResume]
+    D -- Change l'orientation en portrait --> E[onPause]
+    E --> F[onStop]
+    F --> G[onDestroy]
+    G --> H[onCreate]
+    H --> I[onStart]
+    I --> J[onResume]
+    J -- Saisit son nom \net valide --> K[onPause]
+    K --> L[onStop]
+    L --> M[onDetroy]
+    M --> N{Redirection vers\nl'activité principale}
+    
+```
