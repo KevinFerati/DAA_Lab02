@@ -21,15 +21,12 @@ class ColorFragment : Fragment() {
     private lateinit var gSeekBar : SeekBar
     private lateinit var bSeekBar : SeekBar
 
-    init {
-        Log.d("Init", "Couleur : $color")
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             color = Color.parseColor(it.getString(ARG_HEX_COLOR))
         }
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -42,15 +39,15 @@ class ColorFragment : Fragment() {
         savedInstanceState?.let {
             color = it.getInt(ARG_HEX_COLOR, Color.parseColor(DEFAULT_COLOR))
         }
-        Log.d("lifecycle", "onViewCreated with color $color")
         // linkage de la GUI
         rSeekBar = view.findViewById(R.id.color_r)
         gSeekBar = view.findViewById(R.id.color_g)
         bSeekBar = view.findViewById(R.id.color_b)
-        color = Color.RED
         // initialisation des vues
         // on colore la racine de la vue avec la couleur
+
         view.setBackgroundColor(color)
+
         // on initialise les 3 sliders avec les valeurs des 3 composantes (0..255)
         rSeekBar.progress = Color.red(color)
         gSeekBar.progress = Color.green(color)
@@ -68,7 +65,6 @@ class ColorFragment : Fragment() {
             val rComponent = Color.red(color)
             val gComponent = Color.green(color)
             val bComponent = Color.blue(color)
-
             color = when(seekBar) {
                 rSeekBar -> Color.rgb(value, gComponent, bComponent)
                 gSeekBar -> Color.rgb(rComponent, value, bComponent)
@@ -91,8 +87,8 @@ class ColorFragment : Fragment() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt(ARG_HEX_COLOR, color)
-        Log.d("saveInstanceState", color.toString())
     }
+
 
     companion object {
         @JvmStatic

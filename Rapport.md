@@ -83,3 +83,17 @@ dans les champs de saisie sont préservées.
 Pour éviter ce comportement indésirable dans le MainActivity, nous pourrions utiliser un "ViewModel" qui nous 
 permettrait de garder l'état du texte entré préalablement par l'utilisateur. Ainsi, lorsque nous changeront de vue 
 le texte restera à l'écran malgré le nouvelle création de l'état.
+
+
+# 2 - Les fragments
+
+1. La raison pour laquelle la couleur du CouleurFragment est conservée si nous supprimons la fonction `onSaveInstanceState` est que dans la fonction `onProgressChanged`, `color` est attribuée à partir des trois `SeekBar`. Les `SeekBar` possèdent un état interne qui est sauvegardé et réstauré par le système (notamment parce qu'ils ont des ids).
+ Au changement de l'orientation, nous pouvons observer que `onProgressChanged` est appelée, ceci après `onViewCreated`. La raison à ça est que la vue est créée, les `views` internes également et ces derniers restaurent leurs états internes, ce qui lance un appel un `onProgressChanged`.
+
+ 2. Les deux fragments étant indépendants, il se passe la même chose que s'il y a avait eu un seul `ColorFragment`. Les transitions d'état opérées après une rotation sont les suivantes : 
+
+ ``` 
+ onSaveInstanceState -> onDestroyView -> onDestroy -> onCreate -> onViewCreated
+  ```
+
+  L'état est d'abord sauvegardé, le fragment est détruit, puis lui et sa vue sont recréées. C'est à ce moment là que le texte est initialisé.
