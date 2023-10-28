@@ -2,11 +2,13 @@ package com.example.daa_labo2
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
+import java.util.logging.Logger
 
 private const val ARG_HEX_COLOR = "param_color"
 private const val DEFAULT_COLOR = "#CDCDCD"
@@ -18,6 +20,10 @@ class ColorFragment : Fragment() {
     private lateinit var rSeekBar : SeekBar
     private lateinit var gSeekBar : SeekBar
     private lateinit var bSeekBar : SeekBar
+
+    init {
+        Log.d("Init", "Couleur : $color")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +42,12 @@ class ColorFragment : Fragment() {
         savedInstanceState?.let {
             color = it.getInt(ARG_HEX_COLOR, Color.parseColor(DEFAULT_COLOR))
         }
-
+        Log.d("lifecycle", "onViewCreated with color $color")
         // linkage de la GUI
         rSeekBar = view.findViewById(R.id.color_r)
         gSeekBar = view.findViewById(R.id.color_g)
         bSeekBar = view.findViewById(R.id.color_b)
-
+        color = Color.RED
         // initialisation des vues
         // on colore la racine de la vue avec la couleur
         view.setBackgroundColor(color)
@@ -85,6 +91,7 @@ class ColorFragment : Fragment() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt(ARG_HEX_COLOR, color)
+        Log.d("saveInstanceState", color.toString())
     }
 
     companion object {
