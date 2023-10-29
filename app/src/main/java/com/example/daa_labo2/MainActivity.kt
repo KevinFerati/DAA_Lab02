@@ -12,6 +12,7 @@ class MainActivity : LoggedActivity() {
 
     private lateinit var nameText: TextView;
 
+
     private val nameContract = registerForActivityResult(PickNameContract()) {
         nameText.text = "Bonjour, veuillez entrer votre nom"
 

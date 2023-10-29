@@ -1,14 +1,14 @@
-package com.example.daa_labo2
+package com.example.daa_labo2.fragments
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import java.util.logging.Logger
+import androidx.fragment.app.Fragment
+import com.example.daa_labo2.R
+
 
 private const val ARG_HEX_COLOR = "param_color"
 private const val DEFAULT_COLOR = "#CDCDCD"

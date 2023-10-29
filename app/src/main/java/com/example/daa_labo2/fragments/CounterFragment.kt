@@ -1,12 +1,14 @@
-package com.example.daa_labo2
+package com.example.daa_labo2.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.example.daa_labo2.R
+
 
 private const val ARG_COUNTER = "param_counter"
 

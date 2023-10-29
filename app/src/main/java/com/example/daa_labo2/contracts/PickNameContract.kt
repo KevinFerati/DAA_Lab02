@@ -6,6 +6,9 @@ import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContract
 import com.example.daa_labo2.NameInputActivity
 
+/**
+ * Contrat entre MainActivity et nameInputActivity pour la transmission du om entré par l'utilisateur
+ */
 class PickNameContract : ActivityResultContract<Void?, String?>() {
     override fun createIntent(context: Context, input: Void?)
         = Intent(context, NameInputActivity::class.java)

@@ -3,6 +3,7 @@ package com.example.daa_labo2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.daa_labo2.fragments.IdentifiableFragment
 
 class MainActivityFragments2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -10,7 +10,7 @@
     <androidx.fragment.app.FragmentContainerView
         android:layout_weight="1"
         android:id="@+id/counterFrag"
-        android:name="com.example.daa_labo2.ColorFragment"
+        android:name="com.example.daa_labo2.fragments.ColorFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         />
@@ -18,7 +18,7 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/colorFrag"
         android:layout_weight="1"
-        android:name="com.example.daa_labo2.CounterFragment"
+        android:name="com.example.daa_labo2.fragments.CounterFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>
