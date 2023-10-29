@@ -13,19 +13,30 @@ class MainActivityFragments2 : AppCompatActivity() {
             finish()
         }
         findViewById<Button>(R.id.back).setOnClickListener {
+            supportFragmentManager.popBackStackImmediate()
             if (supportFragmentManager.backStackEntryCount == 0) {
                 finish()
                 return@setOnClickListener
             }
-            supportFragmentManager.popBackStack()
         }
 
         findViewById<Button>(R.id.next).setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.settingsStepFrag, IdentifiableFragment.newInstance(supportFragmentManager.backStackEntryCount))
-                .addToBackStack(null)
-                .commit()
+           addStep(supportFragmentManager.backStackEntryCount)
+        }
+
+
+        // add a default step
+        if (supportFragmentManager.backStackEntryCount == 0) {
+            addStep(0)
         }
 
     }
+
+    private fun addStep(stepNumber: Int) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.settingsStepFrag, IdentifiableFragment.newInstance(stepNumber))
+            .addToBackStack(null)
+            .commit()
+    }
+
 }
