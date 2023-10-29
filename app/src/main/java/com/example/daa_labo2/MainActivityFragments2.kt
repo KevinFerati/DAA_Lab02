@@ -16,7 +16,6 @@ class MainActivityFragments2 : AppCompatActivity() {
             supportFragmentManager.popBackStackImmediate()
             if (supportFragmentManager.backStackEntryCount == 0) {
                 finish()
-                return@setOnClickListener
             }
         }
 
@@ -25,7 +24,7 @@ class MainActivityFragments2 : AppCompatActivity() {
         }
 
 
-        // add a default step
+        // add a default step if there's no step
         if (supportFragmentManager.backStackEntryCount == 0) {
             addStep(0)
         }
