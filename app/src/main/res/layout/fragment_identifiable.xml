@@ -10,7 +10,7 @@
         android:id="@+id/stopText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/stop"
+        android:text="@string/step"
 
         app:layout_constraintBottom_toTopOf="@id/stepNumber"
         app:layout_constraintTop_toTopOf="parent"
