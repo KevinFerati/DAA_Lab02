@@ -15,16 +15,15 @@ class MainActivity : LoggedActivity() {
     private val nameContract = registerForActivityResult(PickNameContract()) {
         nameText.text = "Bonjour, veuillez entrer votre nom"
 
-        if (it != null) {
-            if(!it.isBlank())
-                nameText.text = ("Bonjour, ${it.replaceFirstChar { it.uppercase() }} !")
+        if (!it.isNullOrBlank()) {
+            nameText.text = ("Bonjour, ${it.replaceFirstChar { it.uppercase() }} !")
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        nameText = findViewById(R.id.my_textview)
-        val launchActivityButton = findViewById<Button>(R.id.button)
+        nameText = findViewById(R.id.nameText)
+        val launchActivityButton = findViewById<Button>(R.id.editNameButton)
         launchActivityButton.setOnClickListener {
             nameContract.launch(null)
         }

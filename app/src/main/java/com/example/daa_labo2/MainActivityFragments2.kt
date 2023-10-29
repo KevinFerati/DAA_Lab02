@@ -26,7 +26,7 @@ class MainActivityFragments2 : AppCompatActivity() {
 
         // add a default step if there's no step
         if (supportFragmentManager.backStackEntryCount == 0) {
-            addStep(0)
+//            addStep(0)
         }
 
     }
