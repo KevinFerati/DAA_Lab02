@@ -3,4 +3,7 @@
     <string name="my_textview">Bienvenue, veuillez entrer votre nom</string>
     <string name="edit">Editer</string>
     <string name="save">Sauver</string>
+    <string name="back">Back</string>
+    <string name="close">Close</string>
+    <string name="next">Next</string>
 </resources>
