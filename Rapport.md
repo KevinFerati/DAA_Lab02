@@ -17,7 +17,8 @@ La première activité est redémarrée.
     B --> C[onStart]
     C --> D[onResume]
     D -- Utilisateur clique sur Editer --> F[onPause]
-    F --> G{Autre activité}
+    F --> J[onStop]
+    J --> G{Autre activité}
     G -- Utilisateur revient \nen arrière --> I[onRestart]
     I --> C
 ```
@@ -39,7 +40,7 @@ mode paysage, renseigne son prénom et sauve.
 ##### _MainActivity_
 ```mermaid
   graph LR
-    A((Initial)) -- Utilisateur lance l'appli en paysage --> B[onCreate]
+    A((Initial)) -- Utilisateur lance l'appli en portrait --> B[onCreate]
     B --> C[onStart]
     C --> D[onResume]
     D -- Utilisateur clique sur Editer --> F[onPause]
@@ -51,10 +52,10 @@ mode paysage, renseigne son prénom et sauve.
 ##### _NameInputActivity_
 ```mermaid
   graph LR
-    A((Initial)) -- Utilisateur lance l'appli --> B[onCreate]
+    A((Initial)) -- Utilisateur lance l'appli\net clique sur éditer --> B[onCreate]
     B --> C[onStart]
     C --> D[onResume]
-    D -- Change l'orientation en portrait --> E[onPause]
+    D -- Change l'orientation en paysage --> E[onPause]
     E --> F[onStop]
     F --> G[onDestroy]
     G --> H[onCreate]
