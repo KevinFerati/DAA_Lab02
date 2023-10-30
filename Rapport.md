@@ -106,7 +106,7 @@ Nous avons implémenté cette étape de la manière suivante :
 
 Le fragment a un état interne ainsi qu'une fonction `newInstance` permettant de spécifier une étape et qui va retourner un nouveau `IdentifiableFragment`. Cette étape est considérée comme étant un état interne et est maintenue au travers d'un `Bundle`. C'est comme ça que nous avons pu sauvegarder l'état en cas de changement de configuration.
 
-L'activité est assez simple. Les boutons de fermeture et de retour appellent `finish()` (ce dernier s'il n'y a plus rien dans la pile après suppression du dernier fragment). Pour que la première étape s'affiche automatiquement, il y avait deux solutions : soit spécifier avec `android:name` le nom du fragment à afficher, soit le faire avec du code en l'ajoutant manuellement, par exemple dans `onViewCreated`. Nous avons choisi cette ernière solution car nous avions des problèmes dans le premier cas, notamment que le fragment ne semblait pas être dans le `backStack`.
+L'activité est assez simple. Les boutons de fermeture et de retour appellent `finish()` (ce dernier s'il n'y a plus rien dans la pile après suppression du dernier fragment). Pour que la première étape s'affiche automatiquement, il y avait deux solutions : soit spécifier avec `android:name` le nom du fragment à afficher, soit le faire avec du code en l'ajoutant manuellement, par exemple dans `onViewCreated`. Nous avons choisi cette dernière solution car nous avions des problèmes dans le premier cas, notamment que le fragment ne semblait pas être dans le `backStack`.
 
 `add` ajoute la vue du fragment par dessus de celles actuellement dans le `FragmentContainerView`, `replace` la remplace.
 
