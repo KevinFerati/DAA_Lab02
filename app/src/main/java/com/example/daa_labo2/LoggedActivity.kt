@@ -4,6 +4,14 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * Permet de journaliser les différents états des activités
+ * filles de cette classe avec le nom de l'événemnet ainsi que
+ * le nom de la classe appelante.
+ *
+ * @author Kevin Ferati, Malo Romano, Flavio Sovilla
+ *
+ */
 abstract class LoggedActivity : AppCompatActivity() {
 
     private fun log(event: String) {
