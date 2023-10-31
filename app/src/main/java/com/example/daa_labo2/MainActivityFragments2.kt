@@ -15,7 +15,7 @@ class MainActivityFragments2 : AppCompatActivity() {
         }
         findViewById<Button>(R.id.back).setOnClickListener {
             supportFragmentManager.popBackStackImmediate()
-            if (supportFragmentManager.backStackEntryCount == 0) {
+            if (noStep()) {
                 finish()
             }
         }
@@ -26,12 +26,12 @@ class MainActivityFragments2 : AppCompatActivity() {
 
 
         // add a default step if there's no step
-        if (supportFragmentManager.backStackEntryCount == 0) {
-//            addStep(0)
+        if (noStep()) {
+            addStep(0)
         }
 
     }
-
+    private fun noStep() = supportFragmentManager.backStackEntryCount == 0;
     private fun addStep(stepNumber: Int) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.settingsStepFrag, IdentifiableFragment.newInstance(stepNumber))
